@@ -85,7 +85,7 @@ function App () {
       <main>
         {/* search */ }
         {/* getFilter recive data from child and here in parent component set state of 'filter' */ }
-        <Search getFilter={ (x) => { console.log(x); setFilter(x); } } />
+        <Search getFilter={ (x) => setFilter(x) } />
         {/* res */ }
         { loading
           ? <h2>Your data are being loaded. Please wait a moment. ⏳</h2>

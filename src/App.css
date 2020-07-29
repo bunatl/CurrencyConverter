@@ -10,17 +10,6 @@ h1{
 
 
 /* Search section */
-#search{
-  border: 1px solid black;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-}
-
-#search > div{
-  width: 40%;
-}
 
 #search input{
   background-color: darkgray;

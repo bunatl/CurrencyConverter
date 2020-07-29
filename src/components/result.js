@@ -21,9 +21,6 @@ function Search ({ data, filter }) {
                     { data.filter((line) => {
                         // filter object properties are cName & cCode
 
-                        console.log(filter);
-                        // console.log(line);
-
                         /* 
                             we are checking if we can find an index of the term specified in filter inseide our object 
                             (one line/object in our array with all date taht will be shown in the table)
