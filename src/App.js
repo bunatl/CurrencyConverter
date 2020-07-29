@@ -9,6 +9,7 @@ import Result from './components/result';
 function App () {
   const [ loading, setLoading ] = useState(true);
   const [ currencyTable, setCurrencyTable ] = useState([]);
+  const [ filter, setFilter ] = useState();
 
   // https://stackoverflow.com/questions/36631762/returning-html-with-fetch
   function parseDataIntoArray (html) {
@@ -55,7 +56,7 @@ function App () {
     // async function has to be called separetly since useEffect cant return a promise
     async function fetchExchnagerates () {
 
-      const date = "20.05.2020";
+      const date = "18.05.2020";
       const url = `https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/index.html?date=${ date }`;
 
       // cors anywhere proxy
@@ -75,6 +76,7 @@ function App () {
     fetchExchnagerates();
   }, []); // use only on mount
 
+
   return (
     <div className="App">
       {/* header */ }
@@ -82,11 +84,12 @@ function App () {
       {/* main */ }
       <main>
         {/* search */ }
-        <Search />
+        {/* getFilter recive data from child and here in parent component set state of 'filter' */ }
+        <Search getFilter={ (x) => { console.log(x); setFilter(x); } } />
         {/* res */ }
         { loading
-          ? <h2>The data are being loaded. Please wait a moment. ⏳</h2>
-          : <Result data={ currencyTable } />
+          ? <h2>Your data are being loaded. Please wait a moment. ⏳</h2>
+          : <Result data={ currencyTable } filter={ filter } />
         }
       </main>
       <footer></footer>

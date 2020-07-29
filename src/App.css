@@ -27,3 +27,13 @@ h1{
   color: black;
   font-weight: bold;
 }
+
+
+/* Result section */
+table {
+  text-align: center;
+}
+
+table th{
+  font-size: large;
+}
