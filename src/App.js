@@ -8,6 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import Search from './components/search';
 import Result from './components/result';
+import Footer from './components/footer';
 
 function App () {
   const [ loading, setLoading ] = useState(true);
@@ -119,7 +120,7 @@ function App () {
           : <Result data={ currencyTable } filter={ filter } />
         }
       </main>
-      <footer></footer>
+      <Footer />
     </div>
   );
 }

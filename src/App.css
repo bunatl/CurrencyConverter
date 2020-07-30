@@ -1,5 +1,4 @@
 body{
-  margin: 0 18%;
   background-color: darkcyan;
 }
 
@@ -65,9 +64,33 @@ h1{
 /* Result section */
 table {
   text-align: center;
-  box-shadow: 7px 7px 5px lightslategray;
+  box-shadow: 0 0 4px 5px lightslategray;
 }
 
 table th{
   font-size: 1.6em;
+}
+
+main{
+  margin: 0 18%;
+  margin-bottom: 3em;
+  min-height: 70vh;
+}
+
+/* footer */
+footer{
+  background: #36454F;
+  color:white;
+  text-align: center;
+  font-size: 1.1em;
+  padding-top: 1em;
+  line-height: 1.5em;
+  box-shadow: 0 0 8px 6px lightslategray;
+  height: 14vh;
+}
+
+footer a,
+footer a:hover{
+  font-weight: bold;
+  color: darkgray;
 }
