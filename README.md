@@ -4,7 +4,7 @@
 Web app fetches data from (Czech National Bank website)[www.cnb.cz/en] display exchange rates for current day and allow user to filet results by country or currency code.
 
 ## Demo
-![App demo usage]('./demo.gif)
+![App demo usage]('./demo.gif')
 
 ## Live demo
 
