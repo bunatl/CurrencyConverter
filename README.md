@@ -7,7 +7,8 @@ Web app fetches data from (Czech National Bank website)[www.cnb.cz/en] display e
 
 ## Technology used
 - React
-- React bootstrap
+- [React bootstrap](https://react-bootstrap.github.io/)
+- [React Date Picker](https://www.npmjs.com/package/react-datepicker)
 
 ## GUI
 

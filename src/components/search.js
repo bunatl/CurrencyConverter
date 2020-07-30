@@ -26,7 +26,7 @@ function Search (props) {
                     <InputGroup.Text id="basic-addon1"></InputGroup.Text>
                 </InputGroup.Prepend> */}
                 <FormControl
-                    placeholder="Country name, currency code"
+                    placeholder="Filter by country name or currency code"
                     aria-label="CountryName"
                     aria-describedby="searchInputField"
                     value={ text }

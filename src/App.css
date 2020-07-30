@@ -1,15 +1,28 @@
 body{
-  margin: 0 20%;
+  margin: 0 18%;
   background-color: darkcyan;
 }
 
 h1{
   text-align: center;
   font-weight: bold;
+  margin-bottom: 1.2em;
+  margin-top: .2em;
 }
 
+/* Control */
+#control{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
 
 /* Search section */
+#search{
+  flex: 7;
+  padding-right: 1%;
+}
 
 #search input{
   background-color: darkgray;
@@ -17,12 +30,44 @@ h1{
   font-weight: bold;
 }
 
+/* Date */
+#control > div:nth-child(2){
+  flex: 3;
+}
+
+/* Div created by date picker component */
+#control > div:nth-child(2) > div{
+  height: 100%;
+  /* same as bs input css */
+    padding-bottom: 1rem!important;
+}
+
+#dateInput{
+  background-color: darkgray;
+  color: black;
+  text-align: center;
+  border: 1px solid gainsboro;
+
+  border-radius: .25em;
+  font-size: 1.25em;
+
+  height: 100%;
+  width: 100%;
+
+  padding: 0;
+}
+
+#dateInput:hover{
+  cursor: pointer;
+}
+
 
 /* Result section */
 table {
   text-align: center;
+  box-shadow: 7px 7px 5px lightslategray;
 }
 
 table th{
-  font-size: large;
+  font-size: 1.6em;
 }

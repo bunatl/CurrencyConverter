@@ -33,8 +33,8 @@ function Search ({ data, filter }) {
                         */
                         return (
                             (filter === "" || filter === undefined) ||
-                            (line.country.toLowerCase().indexOf(filter.toLowerCase()) != -1) ||
-                            (line.code.toLowerCase().indexOf(filter.toLowerCase()) != -1)
+                            (line.country.toLowerCase().indexOf(filter.toLowerCase()) !== -1) ||
+                            (line.code.toLowerCase().indexOf(filter.toLowerCase()) !== -1)
                         );
                     })
                         .map((item, i) => (

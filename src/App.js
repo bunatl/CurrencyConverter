@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 import Search from './components/search';
 import Result from './components/result';
 
@@ -10,6 +13,15 @@ function App () {
   const [ loading, setLoading ] = useState(true);
   const [ currencyTable, setCurrencyTable ] = useState([]);
   const [ filter, setFilter ] = useState();
+  const [ pickerDate, setPickerDate ] = useState({
+    startDate: new Date()
+  });
+
+  const changeDate = date => {
+    setPickerDate({
+      startDate: date
+    });
+  };
 
   // https://stackoverflow.com/questions/36631762/returning-html-with-fetch
   function parseDataIntoArray (html) {
@@ -30,7 +42,7 @@ function App () {
       // split the row
       const rowCols = el.querySelectorAll('td');
 
-      if (rowCols.length != 0) {
+      if (rowCols.length !== 0) {
         // assign
         const countryName = rowCols[ 0 ].innerText;
         const currencyCode = rowCols[ 3 ].innerText;
@@ -52,11 +64,17 @@ function App () {
     setLoading(false);
   }
 
+  function formatDate (x) {
+    return x.length === 1 ? `0${ x }` : x;
+  }
+
   useEffect(() => {
     // async function has to be called separetly since useEffect cant return a promise
     async function fetchExchnagerates () {
+      setLoading(true);
 
-      const date = "18.05.2020";
+      // dd.mm.yyyy
+      const date = `${ formatDate(pickerDate.startDate.getDate()) }.${ formatDate(pickerDate.startDate.getMonth()) }.${ pickerDate.startDate.getFullYear() }`;
       const url = `https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/index.html?date=${ date }`;
 
       // cors anywhere proxy
@@ -68,27 +86,36 @@ function App () {
         });
       const data = await res.text();
 
-      // console.log(data);
-
       parseDataIntoArray(data);
     };
 
     fetchExchnagerates();
-  }, []); // use only on mount
-
+  }, [ pickerDate ]); // use only on mount and when date in picker date changes
 
   return (
     <div className="App">
       {/* header */ }
-      <header><h1>Currency converter</h1></header>
+      <header><h1>Currency converter <span role="img" aria-labelledby="icon">💱</span></h1></header>
       {/* main */ }
       <main>
         {/* search */ }
         {/* getFilter recive data from child and here in parent component set state of 'filter' */ }
-        <Search getFilter={ (x) => setFilter(x) } />
+        <div id="control">
+          <Search getFilter={ (x) => setFilter(x) } />
+          {/* DatePicker docs: https://reactdatepicker.com/ */ }
+          <DatePicker
+            id="dateInput"
+            closeOnScroll={ true }
+            dateFormat="📅 dd MMMM yyyy"
+            // locale="cs-CZ"
+            withPortal
+            selected={ pickerDate.startDate }
+            onChange={ changeDate }
+          />
+        </div>
         {/* res */ }
         { loading
-          ? <h2>Your data are being loaded. Please wait a moment. ⏳</h2>
+          ? <h2>Your data are being loaded. Please wait a moment. <span role="img" aria-labelledby="waitIcon">⏳</span></h2>
           : <Result data={ currencyTable } filter={ filter } />
         }
       </main>
