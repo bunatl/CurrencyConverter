@@ -106,7 +106,7 @@ function App () {
           <DatePicker
             id="dateInput"
             closeOnScroll={ true }
-            dateFormat="📅 dd MMMM yyyy"
+            dateFormat="📅 MMMM dd, yyyy"
             // locale="cs-CZ"
             withPortal
             selected={ pickerDate.startDate }
