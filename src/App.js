@@ -111,6 +111,8 @@ function App () {
             // locale="cs-CZ"
             withPortal
             selected={ pickerDate.startDate }
+            // future rates rates aren't available
+            maxDate={ new Date() }
             onChange={ changeDate }
           />
         </div>
