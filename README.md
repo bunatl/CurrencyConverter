@@ -7,7 +7,7 @@ Web app fetches data from (Czech National Bank website)[www.cnb.cz/en] display e
 ![App demo usage](./demo.gif "App demo gif")
 
 ## Live demo
-Project's live demo is hosted on [www.currency.techis.fun](currency.techis.fun) with [netlify](https://www.netlify.com/).
+Project's live demo is hosted on [www.currency.techis.fun](http://currency.techis.fun/) with [netlify](https://www.netlify.com/).
 
 ## Technology used
 - [ReactJS 16.8](https://reactjs.org/)
