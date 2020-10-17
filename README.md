@@ -1,7 +1,7 @@
 # Currency Converter
 
 ## Description
-Web app that fetches data from (Czech National Bank website)[www.cnb.cz/en] and displays exchange rates for current(selected) day. After data being fetched the user is allowed to filter results by country or currency code.
+Web app that fetches data from [Czech National Bank website](www.cnb.cz/en) and displays exchange rates for current(selected) day. After data being fetched the user is allowed to filter results by country or currency code.
 
 ## Demo
 ![App demo usage](./demo.gif "App demo gif")
