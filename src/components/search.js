@@ -5,8 +5,7 @@ import FormControl from 'react-bootstrap/FormControl';
 
 // passing data from child to parent component
 // https://www.youtube.com/watch?v=-N7auOijZts
-
-function Search (props) {
+const Search = (props) => {
     const [ text, setText ] = useState("");
 
     const typing = (e) => {
@@ -22,9 +21,9 @@ function Search (props) {
             <InputGroup
                 size="lg"
                 className="mb-3" >
-                {/* <InputGroup.Prepend>
-                    <InputGroup.Text id="basic-addon1"></InputGroup.Text>
-                </InputGroup.Prepend> */}
+                <InputGroup.Prepend>
+                    <InputGroup.Text id="basic-addon1"><span role='img' aria-labelledby='search'>🔎</span></InputGroup.Text>
+                </InputGroup.Prepend>
                 <FormControl
                     placeholder="Filter by country name or currency code"
                     aria-label="CountryName"
@@ -35,6 +34,6 @@ function Search (props) {
             </InputGroup>
         </div>
     );
-}
+};
 
 export default Search;

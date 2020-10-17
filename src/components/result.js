@@ -1,20 +1,16 @@
 import React from 'react';
-
 import Table from 'react-bootstrap/Table';
 
-// data is array of objects
-// with properties: code, country, amount, rate
-function Search ({ data, filter }) {
-
+const Search = ({ data, filter }) => {
     return (
         <div id="result">
-            <Table striped bordered hover variant="dark">
+            <Table striped bordered data-resizable hover variant="dark">
                 <thead>
                     <tr>
                         <th>Code</th>
                         <th>Country</th>
                         <th>Amount</th>
-                        <th>Rate</th>
+                        <th>In CZK</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,14 +37,14 @@ function Search ({ data, filter }) {
                             <tr key={ i }>
                                 <td>{ item.code }</td>
                                 <td>{ item.country }</td>
-                                <td>{ item.amount }</td>
-                                <td>{ item.rate }</td>
+                                <td><b>{ item.amount }</b></td>
+                                <td><b>{ item.rate }</b></td>
                             </tr>
                         )) }
                 </tbody>
             </Table>
         </div>
     );
-}
+};
 
 export default Search;

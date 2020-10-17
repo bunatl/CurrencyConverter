@@ -1,13 +1,13 @@
 # Currency Converter
 
 ## Description
-Web app fetches data from (Czech National Bank website)[www.cnb.cz/en] display exchange rates for current day and allow user to filet results by country or currency code.
+Web app that fetches data from (Czech National Bank website)[www.cnb.cz/en] and displays exchange rates for current(selected) day. After data being fetched the user is allowed to filter results by country or currency code.
 
 ## Demo
 ![App demo usage](./demo.gif "App demo gif")
 
 ## Live demo
-Project's live demo is hosted on [www.currency.techis.fun](http://currency.techis.fun/) with [netlify](https://www.netlify.com/).
+Project's live demo is hosted on [www.currency-converter.techis.fun](http://currency-converter.techis.fun/) with [vercel](https://vercel.com).
 
 ## Technology used
 - [ReactJS 16.8](https://reactjs.org/)
@@ -18,3 +18,4 @@ Project's live demo is hosted on [www.currency.techis.fun](http://currency.techi
 [www.cnb.cz](https://www.cnb.cz/cs/financni-trhy/devizovy-trh/kurzy-devizoveho-trhu/kurzy-devizoveho-trhu/)
 
 ## Licence
+MIT
